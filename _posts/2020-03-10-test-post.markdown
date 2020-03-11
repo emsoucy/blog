@@ -1,8 +1,10 @@
 ---
 layout: post
-title:  "Test post"
+title:  "Test post, don't ignore."
 date:   2020-03-10 09:09:19 -0400
 categories: jekyll update
 ---
 
 This is my personal site. I have no social media presence so I hope that this becomes a place where I can freely express myself on my own terms. I came to the recent realization that I should have a hub on the web that is free of the grubby hands of Internet behemoths. The Internet is the greatest social network of all- why not use it?
+
+[About me](/about)
