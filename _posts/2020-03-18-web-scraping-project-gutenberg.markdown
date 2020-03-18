@@ -4,7 +4,7 @@ title:  "Web Scraping Project Gutenberg"
 date:   2020-03-18 09:45:00 -0400
 categories: jekyll update
 ---
-There are may data sources on the web that are not available via API but are only available in a human readable website form. This is where web scraping comes in. Web scraping consists of "scraping" or downloading the site, saving data, and following links in an automated fashion.
+There are many data sources on the web that are not available via API but are only available in a human readable website form. This is where web scraping comes in. Web scraping consists of "scraping" or downloading the site, saving data, and following links in an automated fashion.
 
 Let's take a look at Project Gutenberg:
 
