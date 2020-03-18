@@ -8,7 +8,7 @@ There are may data sources on the web that are not available via API but are onl
 
 Let's take a look at Project Gutenberg:
 
-![Book 1 on Project Gutenberg](/photos/projectGutenbergBook1.png)
+![Book 1 on Project Gutenberg](/photos/projectGutenberg/projectGutenbergBook1.png)
 
 This site is good and easy practice for web scraping for a few reasons:
 - The URL for each book is a simple number that we can increment to scrape each book.
@@ -108,7 +108,7 @@ function getBook(url) {
 ```
 This code grabs a page as before except now it will save the plaintext version of the book. Passing this function a book URL should produce:
 
-![First Book](/photos/scrapeFirstBook.png)
+![First Book](/photos/projectGutenberg/scrapeFirstBook.png)
 
 But wouldn't it be nice to scrape every book that is available in plaintext? Checking Project Gutenberg shows that they have http://www.gutenberg.org/ebooks/1 - http://www.gutenberg.org/ebooks/61610.
 
@@ -200,11 +200,11 @@ for (let i = 1; i <= lastBook; ++i) {
 
 We shoud now see the following in our terminal when we run the app:
 
-![Scraping All Books](/photos/scrapingAllBooks.png)
+![Scraping All Books](/photos/projectGutenberg/scrapingAllBooks.png)
 
 And if we query our database we should see the books:
 
-![Books in database](/photos/showSavedBooks.png)
+![Books in database](/photos/projectGutenberg/showSavedBooks.png)
 
 After action:
 
