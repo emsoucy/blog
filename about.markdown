@@ -8,9 +8,9 @@ permalink: /about/
 - I am attracted to computers, books, and music.
 - I am repelled by TV, social media, and cell phones.
 
-I love technology but strive to stay out of the attention-economy, ad-driven, dystopian cycle of social media/phone addiction. Somebody wise once said, "if content is not worth paying for then it is not worth your time" and it stuck.
+I love technology but strive to stay out of the attention-economy, ad-driven, dystopian cycle of social media/phone addiction. Somebody wise once said, "if content is not worth paying for then it is not worth your time"
 
-I am currently looking for a software engineering role. I have spent most of my career writing C/C++ in Linux and Windows environments but lately I have been experimenting with HTML, CSS, and React.
+I am currently looking for a software engineering role. I have spent most of my career writing C/C++ in Linux and Windows environments but lately I have been experimenting with Nodejs, React, and MongoDB.
 
 ## Work  
 #### BAE Systems, Inc., 2017 - 2019  
