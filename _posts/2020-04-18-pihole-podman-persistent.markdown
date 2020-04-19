@@ -31,7 +31,7 @@ These lines will place the storage location in the user's home directory that th
 ```
 Now that our command to create is good to go I can generate the service file for systemd with the following command:
 ````
-$ podman generate systemd > /etc/systemd/system/pihole-container.service
+$ podman generate systemd pi-hole > /etc/systemd/system/pihole-container.service
 ```
 
 This will create a service file for systemd to use by redirecting the output of the generate command to a new service file in /etc/systemd/system/
@@ -39,6 +39,7 @@ This will create a service file for systemd to use by redirecting the output of 
 Next we need to reload systemctl and enable the service to start at boot:
 
 ```
+$ systemctl daemon-reload
 $ systemctl enable pihole-container.service
 $ systemctl start pihole-container.service
 ```
