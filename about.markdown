@@ -3,38 +3,37 @@ layout: page
 title: About
 permalink: /about/
 ---
+I developed an early interest in computers thanks to the patience and encouragement of my parents. Watching my father disassemble the family PC, a Zeos brand 90MHz Pentium, was as if an entire world had revealed itself to me. 
 
-### My Name is Ethan
-- I am attracted to computers, books, and music.
-- I am repelled by TV, social media, and cell phones.
+I am currently looking for a software engineering opportunities. Most of my experience is in C/C++, and Perl but I am currently fascinated by automated deployment and containerization. I feel the most at home working in a Linux Environment.
 
-I love technology but strive to stay out of the attention-economy, ad-driven, dystopian cycle of social media/phone addiction. Somebody wise once said, "if content is not worth paying for then it is not worth your time"
+## Professional History
+#### Raytheon, 2020 - 2021
+Software Engineer II\
+(Ansible, IBM AIX, Perl, RHEL)
+- Spearheaded project to convert custom legacy integration scripts to a more robust, Ansible-driven, workflow. Preliminary results indicate a 30x reduction in code to maintain.
+- Designed fuzzer and isolated numerous bugs that escape traditional integration tests.
+- Responsibilities include investigating and solving integration script issues, running/testing nightly build, and approving merges.
 
-I am currently looking for a software engineering role. I have spent most of my career writing C/C++ in Linux and Windows environments but lately I have been experimenting with Nodejs, React, and MongoDB.
-
-## Work  
 #### BAE Systems, Inc., 2017 - 2019  
-Software Engineer II  
-- Designed, implemented, and unit tested new components for simulation software.  
-(C++, Windows, Powershell, Clearcase, Google Test)  
-- Designed, implemented, and unit tested new integration lab test stands to significantly shorten automated test time and hardware wait time.  
-(C, Linux, Git, Bash, GDB, Bitbucket)
+Software Engineer II\
+(Bash, Bitbucket, C/C++, GDB, Git, Google Test, Linux)
+- Designed, implemented, and unit tested new components for aircraft simulation software.  
+- Implemented new integration lab test stands to significantly shorten automated test time and hardware contention.
 
 #### Toray Plastics America, 2016
-Information Systems Intern  
-- Designed and implemented tools that queried company network equipment and gathered metrics. Tools allowed IT managers to easily collect network information to hasten decision making and more intelligently deploy IT resources.  
-(Python, Powershell, Cisco IOS)
+Information Systems Intern\
+(Cisco IOS, Powershell, Python)
+- Created new tools that queried company network equipment and gathered metrics. Tools allowed IT managers to easily collect network information to hasten decision making and more intelligently deploy IT resources.  
 
 #### USMC, 2009 - 2013
-0311 Rifleman, 8621 Surveillance Sensor Operator, E-4  
+0311 Rifleman, 8621 Surveillance Sensor Operator, Corporal (E-4)\
+3rd Intelligence Battalion, Ground Sensor Platoon -- Camp Hansen, Okinawa, Japan
 - Planned and configured surveillance sensor networks for intelligence collection missions. Planned and led training exercises. Trained junior Marines on missions and equipment.
-- Served at 3rd Intelligence Bn., Camp Hansen, Okinawa, Japan.
 
 ## Education
 #### Johnson & Wales University, 2013 - 2017
-- B.S. Software Engineering, B.S. Network Engineering
-- A.S. Computer Programming
-
-- President of the technology club.
-- Tutored other students on software and network classes.
-- Dean's list.
+B.S. Software Engineering, B.S. Network Engineering\
+A.S. Computer Programming
+- Technology club president
+- Tutor
