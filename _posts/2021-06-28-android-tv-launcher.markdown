@@ -59,4 +59,4 @@ Package com.google.android.tvlauncher new state: enabled
 ## Conclusion
 Although this change to Android TV was unwelcome, I enjoyed learning about my device and customizing it to my needs. At least customiztion is still possible but when will the next update roll out that I have to react to?
 
-The following threads on [HN](https://news.ycombinator.com/item?id=27643208) and [Reddit](https://old.reddit.com/r/ShieldAndroidTV/comments/o6o5dz/new\_guide\_use\_a\_custom\_launcher\_shield\_tv\_with/) were good resources.
+The following threads on [HN](https://news.ycombinator.com/item?id=27643208) and [Reddit](https://old.reddit.com/r/ShieldAndroidTV/comments/o6o5dz/new_guide_use_a_custom_launcher_shield_tv_with/) were good resources.
