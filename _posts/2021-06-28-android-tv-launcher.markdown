@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "How I Installed a 3rd Party Android TV Launcher"
-date:   2021-06-22 09:45:00 -0400
-categories: podman buildah container
+date:   2021-06-28 09:45:00 -0400
+categories: android
 ---
 There was a recent update to Android TV which added advertisements to the home screen of my Nvidia Shield. This was an unwanted surprise but luckily it was not too difficult switching to a 3rd party launcher. I am recreating the steps that I took with an Android TV device in the Android emulator.
 
