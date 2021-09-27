@@ -3,25 +3,24 @@ layout: post
 title:  "Building a SteamCMD Container Base Image From Scratch"
 date:   2021-09-27 09:30:00 -0400
 ---
-Many developers on Steam provide dedicated server software that can be used to host multiplayer instances of their games.
-This enables players to host and control their own game servers.
-One requirement for this is the [```steamcmd```](https://developer.valvesoftware.com/wiki/SteamCMD) tool.
-This command line tool allows the user to connect to Steam, download, and install dedicated server software.
-For this post I will be describing my process of building a SteamCMD container base image which can be used as a starting point in the future for game servers.
+Many developers on Steam provide dedicated server software that can be used by players to host their own multiplayer games.
+The [```steamcmd```](https://developer.valvesoftware.com/wiki/SteamCMD) tool can be used to fetch the server software from Steam.
+This command-line tool allows users to connect to Steam, download, and install dedicated server software.
+For this post I will be describing my process of building a container base image with the SteamCMD tool preinstalled.
 
 ## Requirements
 One of the main concerns of running any Internet connected server is security.
-To minimize the security footprint (and learn along the way) I will be building this image from scratch with a very minimal set of software.
-The image should also be designed to be run rootless using as few privileges as possible.
-To further reduce the security footprint, containers derived from this image should force the use of a non-root user inside the container itself.
+To minimize the security footprint, and learn along the way, I will be building this image from scratch with a very minimal set of software.
+The image should be designed for rootless opearation with as few privileges as possible.
+To further isolate the server from the host, containers derived from this image will use an unprivileged user inside of the container itself.
 
 For this project, I will be using [```podman```](https://podman.io/) and [```buildah```](https://buildah.io/).
 
 ## Creating the SteamCMD base image
-In order to download dedicated servers from Steam I need the [```steamcmd```](https://developer.valvesoftware.com/wiki/SteamCMD) command.
-Using the Valve-provided instructions on the ```steamcmd```, I wrote a build script adapting the instructions to fit my own requirements.
+In order to download dedicated servers from Steam, I need the [```steamcmd```](https://developer.valvesoftware.com/wiki/SteamCMD) command.
+Using the Valve-provided instructions on ```steamcmd```, I wrote a build script adapting the instructions to fit my own requirements.
 
-The current incarnation of the build script is repeated here:
+The build script is as follows:
 ```bash
 #!/bin/bash
 set -o errexit
@@ -66,8 +65,8 @@ buildah commit --squash $CONTAINER docker.io/emsoucy/steamcmd
 The script mounts an empty image and then uses ```dnf``` package manager to install packages into the root of the mounted container.
 This way I do not need to include a package manager inside of the container, my host's package manager installs the packages into the container.
 I then create the ```steam``` user and make the required changes to ```/etc/passwd``` and ```/etc/group```.
-Next , I download and unpack the ```steamcmd``` files into the container and run it so that it will download and update the latest Steam files.
-Lastly, the script squashes and commits the image.
+Next I download and unpack the ```steamcmd``` files into the container and run it so that it will download and update the latest Steam files.
+Lastly the script squashes and commits the image.
 
 Building and listing the image:
 ```
@@ -76,6 +75,9 @@ Building and listing the image:
 REPOSITORY                  TAG         IMAGE ID      CREATED        SIZE
 docker.io/emsoucy/steamcmd  latest      7a82922e0390  3 minutes ago  346 MB
 ```
+I now have a finished, generic base image that contains ```steamcmd``` that I can be leveraged for future dedicated servers.
 
-# Conclusion
-I now have a finished, generic base image that contains ```steamcmd``` that I can use for future dedicated servers.
+# Resources
+The most recent build script can be found on it's [GitHub project page](https://github.com/emsoucy/steamcmd).
+
+[Fedora Magazine: Build Smaller Containers](https://fedoramagazine.org/build-smaller-containers/)
