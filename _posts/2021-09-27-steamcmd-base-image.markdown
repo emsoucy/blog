@@ -75,7 +75,7 @@ Building and listing the image:
 REPOSITORY                  TAG         IMAGE ID      CREATED        SIZE
 docker.io/emsoucy/steamcmd  latest      7a82922e0390  3 minutes ago  346 MB
 ```
-I now have a finished, generic base image that contains ```steamcmd``` that I can be leveraged for future dedicated servers.
+I now have a finished, generic base image that contains ```steamcmd``` that can be leveraged for future dedicated servers.
 
 # Resources
 The most recent build script can be found on it's [GitHub project page](https://github.com/emsoucy/steamcmd).
