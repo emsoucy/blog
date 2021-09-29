@@ -26,21 +26,21 @@ The build script is as follows:
 set -o errexit
 
 # Vars
-CONTAINER=$(buildah from scratch)
+CONTAINER=$(buildah from --ulimit nofile=2048 scratch)
 MOUNTPOINT=$(buildah mount $CONTAINER)
 
 URL='https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz'
 STEAM=/home/steam/steamcmd
-OS=$(egrep '^NAME' /etc/os-release | cut -d '=' -f2)
 VER=$(egrep '^VERSION_ID' /etc/os-release | cut -d '=' -f2)
 
 # Install dependencies
-if [[ $OS =~ 'Fedora' ]]; then
-  dnf install -y --installroot $MOUNTPOINT --releasever $VER coreutils\
-    glibc.i686 libstdc++.i686 --nodocs --setopt install_weak_deps=False
+if command -v 'dnf' &> /dev/null; then
+  dnf install -y --installroot $MOUNTPOINT --releasever $VER\
+    SDL2.i686 coreutils glibc-langpack-en glibc.i686 libstdc++.i686\
+    --nodocs --refresh --setopt install_weak_deps=False
   dnf clean all -y --installroot $MOUNTPOINT --releasever $VER
 else
-  echo "Unsupported OS. Exiting"; exit
+  echo "Build script requires dnf package manager. Exiting."; exit
 fi
 
 # Create steam user
@@ -58,10 +58,8 @@ chmod -R 700 $MOUNTPOINT/home/steam
 chown -R 1000:1000 $MOUNTPOINT/home/steam
 buildah run $CONTAINER -- sh\
   -c "$STEAM/steamcmd.sh +login anonymous validate +exit"
-buildah unmount $CONTAINER
-
-buildah commit --squash $CONTAINER docker.io/emsoucy/steamcmd
 ```
+
 The script mounts an empty image and then uses ```dnf``` package manager to install packages into the root of the mounted container.
 This way I do not need to include a package manager inside of the container, my host's package manager installs the packages into the container.
 I then create the ```steam``` user and make the required changes to ```/etc/passwd``` and ```/etc/group```.
@@ -75,9 +73,13 @@ Building and listing the image:
 REPOSITORY                  TAG         IMAGE ID      CREATED        SIZE
 docker.io/emsoucy/steamcmd  latest      7a82922e0390  3 minutes ago  346 MB
 ```
-I now have a finished, generic base image that contains ```steamcmd``` that can be leveraged for future dedicated servers.
+Installing a game:
+```
+[ethan@fedora ~]$ podman run -it steamcmd bash
+bash-5.1$ steamcmd.sh +login anonymous +app_update <app id> validate +exit
+```
 
 # Resources
-The most recent build script can be found on it's [GitHub project page](https://github.com/emsoucy/steamcmd).
+The most recent build script can be found on [GitHub](https://github.com/emsoucy/steamcmd).
 
 [Fedora Magazine: Build Smaller Containers](https://fedoramagazine.org/build-smaller-containers/)
