@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Building a Valheim Dedicated Server Container"
-date:   2021-09-30 09:30:00 -0400
+date:   2021-10-04 09:30:00 -0400
 ---
 I enjoy gaming with friends and the latest game that we have been playing is [Valheim](https://en.wikipedia.org/wiki/Valheim).
 Valheim is a sandbox/survival game that takes place in a large procedurally generated world inspired by Norse mythology.
@@ -94,13 +94,14 @@ The ```data``` directory can be anything that I choose.
 Valheim will use the data directory for things like worlds and admin files.
 The directory tree of ```data``` can be seen as follows:
 ```
-data
+data/
 ├── adminlist.txt
 ├── bannedlist.txt
 ├── permittedlist.txt
 ├── prefs
 └── worlds
     ├── Ethan's World.db
+    ├── Ethan's World.db.old
     ├── Ethan's World.fwl
     └── Ethan's World.fwl.old
 ```
