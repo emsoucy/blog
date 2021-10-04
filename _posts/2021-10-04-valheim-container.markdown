@@ -19,7 +19,9 @@ I would like the container to:
 
 ## Building the Container Image
 This time around the build script is quite small, however we gain an entry point script.
-I repeat them here, since they are short, but they can be found on [GitHub](https://github.com/emsoucy/valheim).
+I'll repeat them here, since they are short, but they can be found on [GitHub](https://github.com/emsoucy/valheim).
+
+Build script:
 ```bash
 #!/bin/bash
 set -o errexit
@@ -35,6 +37,8 @@ buildah commit --squash $CONTAINER valheim
 ```
 This creates the full path to worlds directory which we will need for the volume mount and copies over the entry point startServer.sh script.
 The start server script will server as the container entrypoint and will download, update, and run the game server software. 
+
+Container entry point script:
 ```bash
 #!/bin/bash
 set -o errexit
@@ -76,6 +80,13 @@ Storing signatures
 a87c9cc6f734d48f77e07674f6286ba1ba77fe459ab7eb7ae10140e8e2f9303c
 ```
 This builds quickly because I already have the ```steamcmd``` base image built.
+If the build is successful I should see the new Valheim container listed.
+```
+[ethan@fedora containerTestArea]$ podman image list
+REPOSITORY          TAG         IMAGE ID      CREATED            SIZE
+localhost/valheim   latest      a87c9cc6f734  About an hour ago  356 MB
+localhost/steamcmd  latest      42404647a957  2 hours ago        356 MB
+```
 
 # Running the Server
 The new container can be run with the following:
